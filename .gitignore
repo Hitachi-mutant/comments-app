@@ -1,0 +1,16 @@
+# Virtual environment
+venv/
+
+# Byte-compiled / cache files
+__pycache__/
+*.pyc
+
+# Node modules from Vue frontend
+node_modules/
+
+# Build output (Vue)
+dist/
+
+# OS-specific files
+.DS_Store
+
