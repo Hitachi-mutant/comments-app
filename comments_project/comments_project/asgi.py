@@ -8,9 +8,15 @@ https://docs.djangoproject.com/en/5.2/howto/deployment/asgi/
 """
 
 import os
-
+from channels.routing import ProtocolTypeRouter, URLRouter
 from django.core.asgi import get_asgi_application
+import comments_api.routing
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'comments_project.settings')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "comments_project.settings")
 
-application = get_asgi_application()
+application = ProtocolTypeRouter({
+    "http": get_asgi_application(),
+    "websocket": URLRouter(
+        comments_api.routing.websocket_urlpatterns
+    ),
+})
