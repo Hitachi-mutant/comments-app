@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             name='Comment',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('username', models.CharField(max_length=100)),
+                ('name', models.CharField(max_length=100)),
                 ('email', models.EmailField(max_length=254)),
                 ('homepage', models.URLField(blank=True, null=True)),
                 ('text', models.TextField()),
